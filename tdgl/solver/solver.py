@@ -286,9 +286,9 @@ class TDGLSolver:
             assert pypardiso is not None
 
         # Initialize the order parameter and electric potential
-        # psi_init = np.ones(len(mesh.sites), dtype=np.complex128)
-        psi_init = np.zeros(len(mesh.sites), dtype=np.complex128)
-        psi_init[10000] = 1.0
+        psi_init = np.ones(len(mesh.sites), dtype=np.complex128)
+        # psi_init = np.zeros(len(mesh.sites), dtype=np.complex128)
+        # psi_init[10000] = 1.0
         ####################### custemize initial condition ##############
         if terminal_psi is not None:
             psi_init[normal_boundary_index] = terminal_psi
