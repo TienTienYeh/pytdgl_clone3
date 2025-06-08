@@ -212,8 +212,9 @@ class TDGLSolver:
             epsilon = disorder_epsilon(self.sites, **kw)
         else:
             epsilon = np.array([float(disorder_epsilon(r, **kw)) for r in self.sites])
-        if np.any(epsilon > 1):
-            raise ValueError("The disorder parameter epsilon must be <= 1")
+        # if np.any(epsilon > 1):
+        #     raise ValueError("The disorder parameter epsilon must be <= 1")
+        ############# Customize eps ###############
 
         # Clear the Parameter caches
         if isinstance(self.applied_vector_potential, Parameter):
