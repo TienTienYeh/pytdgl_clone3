@@ -202,8 +202,9 @@ class TDGLSolver:
 
             def disorder_epsilon(r):
                 # return _disorder_epsilon * np.ones(len(r), dtype=float)
-                inhomo_dist = np.sign(r[:,0])*np.ones(len(r), dtype=float)*0.75+0.25
-                return _disorder_epsilon * inhomo_dist
+                inhomo_dist = np.sign(r[:,0])*np.ones(len(r), dtype=float)*0.75+0.25 
+                homo_dist = np.ones(len(r), dtype=float)
+                return _disorder_epsilon * homo_dist
 
             self.vectorized_epsilon = True
             self.dynamic_epsilon = False
